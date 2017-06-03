@@ -21,7 +21,8 @@ class MyDetailViewController: UIViewController {
     var DetailRecipe : RecipeObject!
     
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
+        
     }
     
     override func viewDidLoad() {

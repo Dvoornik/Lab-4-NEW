@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyTableViewController: UITableViewController {
+class MyTableViewController: UITableViewController, UISearchResultsUpdating {
     
     /*var Recipes = ["Cappuccino", "Chai Latte", "Lemon Iced Tea", "Homestyle Lemonade", "Berry Smoothie", "Strawberry Cheesecake", "Caramel Flan", "Blueberry Pie", "Chocolate Molten Lava Cake", "Vanilla Cream Puff", "Chili Con Carne", "New England Clam Chowder", "Garden Salad", "7-Layer Nachos", "Buffalo Wings", "Oven-baked Salmon", "Grilled Steak", "Grilled Pork Chop", "Spaghetti and Meatballs", "Cheeseburger"]
     
@@ -42,6 +42,9 @@ class MyTableViewController: UITableViewController {
         RecipeObject (iRecipe: "Lemon Iced Tea", iRecipeImage: #imageLiteral(resourceName: "icedtea"), iFullDescription: "Green tea is blended with mint, lemongrass and lemon verbena and lemonade, then lightly sweetened and given a good shake."),
         RecipeObject (iRecipe: "Homestyle Lemonade", iRecipeImage: #imageLiteral(resourceName: "lemonade"), iFullDescription: "Simple and easy method for perfect lemonade every time! With simple syrup and fresh lemon juice.")]
     
+    var searchController : UISearchController!
+    var searchResults : [RecipeObject] = []
+    
    /* override var prefersStatusBarHidden: Bool {
         return true
     }*/
@@ -54,6 +57,13 @@ class MyTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchBar.sizeToFit()
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.tableView.tableHeaderView = self.searchController.searchBar
         
     }
     
@@ -76,18 +86,30 @@ class MyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         //return Recipes.count
+        if searchController.isActive {
+            return searchResults.count
+        }
+        else {
         return MyRecipe.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "RecipesCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MyTableViewCell
-
+        
+        var cellItem : RecipeObject
+        if searchController.isActive {
+            cellItem = searchResults[indexPath.row]
+        }
+        else {
+            cellItem = MyRecipe[indexPath.row]
+        }
         // Configure the cell...
         
-        cell.cellLabel?.text = MyRecipe[indexPath.row].iRecipe
-        cell.cellImage?.image = MyRecipe[indexPath.row].iRecipeImage
+        cell.cellLabel?.text = cellItem.iRecipe
+        cell.cellImage?.image = cellItem.iRecipeImage
         return cell
     }
     
@@ -96,7 +118,12 @@ class MyTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if searchController.isActive {
+            return false
+        }
+        else{
+            return true
+        }
     }
     
 
@@ -140,7 +167,7 @@ class MyTableViewController: UITableViewController {
         if segue.identifier == "ShowRecipeDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let detailVC = segue.destination as! MyDetailViewController
-                detailVC.DetailRecipe = MyRecipe[indexPath.row]
+                detailVC.DetailRecipe = searchController.isActive ? searchResults[indexPath.row] : MyRecipe[indexPath.row]
             }
         }
         else if  segue.identifier == "AddNewRecipe" {
@@ -151,6 +178,20 @@ class MyTableViewController: UITableViewController {
     
     func addData(newItem : RecipeObject){
         MyRecipe.append(newItem)
+    }
+    
+    func filterContentForSearchText(searchText: String) {
+        searchResults = MyRecipe.filter({(RecipeItem : RecipeObject) -> Bool in
+            let nameMatch = RecipeItem.iRecipe.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+            return nameMatch != nil
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let textToSearch = searchController.searchBar.text {
+            filterContentForSearchText(searchText: textToSearch)
+            tableView.reloadData()
+        }
     }
     
 
