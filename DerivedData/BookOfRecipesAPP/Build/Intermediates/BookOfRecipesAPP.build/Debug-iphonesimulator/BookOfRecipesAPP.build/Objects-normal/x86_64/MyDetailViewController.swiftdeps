@@ -1,0 +1,365 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MyDetailViewController"
+provides-nominal:
+- "C16BookOfRecipesAPP22MyDetailViewController"
+provides-member:
+- ["C16BookOfRecipesAPP22MyDetailViewController", ""]
+provides-dynamic-lookup:
+- "LabelDescription"
+- "LabelImage"
+- "LabelRecipeText"
+- "RecipeDescription"
+- "RecipeImage"
+- "RecipeLabel"
+- "didReceiveMemoryWarning"
+- "prefersStatusBarHidden"
+- "viewDidLoad"
+depends-top-level:
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "MyDetailViewController"
+- "String"
+- "UIImage"
+- "UIImageView"
+- "UILabel"
+- "UITextView"
+- "UIViewController"
+depends-member:
+- !private ["Ps9AnyObject", "LabelDescription"]
+- !private ["Ps9AnyObject", "LabelImage"]
+- !private ["Ps9AnyObject", "LabelRecipeText"]
+- !private ["Ps9AnyObject", "RecipeDescription"]
+- !private ["Ps9AnyObject", "RecipeImage"]
+- !private ["Ps9AnyObject", "RecipeLabel"]
+- !private ["Ps9AnyObject", "didReceiveMemoryWarning"]
+- !private ["Ps9AnyObject", "image"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "text"]
+- !private ["Ps9AnyObject", "viewDidLoad"]
+- ["Ps9AnyObject", ""]
+- !private ["PSo15CALayerDelegate", "image"]
+- !private ["PSo15CALayerDelegate", "text"]
+- !private ["Ps7CVarArg", "LabelDescription"]
+- !private ["Ps7CVarArg", "LabelImage"]
+- !private ["Ps7CVarArg", "LabelRecipeText"]
+- !private ["Ps7CVarArg", "RecipeDescription"]
+- !private ["Ps7CVarArg", "RecipeImage"]
+- !private ["Ps7CVarArg", "RecipeLabel"]
+- !private ["Ps7CVarArg", "didReceiveMemoryWarning"]
+- !private ["Ps7CVarArg", "image"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "text"]
+- !private ["Ps7CVarArg", "viewDidLoad"]
+- ["Ps7CVarArg", ""]
+- !private ["Ps28CustomDebugStringConvertible", "LabelDescription"]
+- !private ["Ps28CustomDebugStringConvertible", "LabelImage"]
+- !private ["Ps28CustomDebugStringConvertible", "LabelRecipeText"]
+- !private ["Ps28CustomDebugStringConvertible", "RecipeDescription"]
+- !private ["Ps28CustomDebugStringConvertible", "RecipeImage"]
+- !private ["Ps28CustomDebugStringConvertible", "RecipeLabel"]
+- !private ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
+- !private ["Ps28CustomDebugStringConvertible", "image"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "text"]
+- !private ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "LabelDescription"]
+- !private ["Ps23CustomStringConvertible", "LabelImage"]
+- !private ["Ps23CustomStringConvertible", "LabelRecipeText"]
+- !private ["Ps23CustomStringConvertible", "RecipeDescription"]
+- !private ["Ps23CustomStringConvertible", "RecipeImage"]
+- !private ["Ps23CustomStringConvertible", "RecipeLabel"]
+- !private ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
+- !private ["Ps23CustomStringConvertible", "image"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "text"]
+- !private ["Ps23CustomStringConvertible", "viewDidLoad"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Ps9Equatable", "LabelDescription"]
+- !private ["Ps9Equatable", "LabelImage"]
+- !private ["Ps9Equatable", "LabelRecipeText"]
+- !private ["Ps9Equatable", "RecipeDescription"]
+- !private ["Ps9Equatable", "RecipeImage"]
+- !private ["Ps9Equatable", "RecipeLabel"]
+- !private ["Ps9Equatable", "didReceiveMemoryWarning"]
+- !private ["Ps9Equatable", "image"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "text"]
+- !private ["Ps9Equatable", "viewDidLoad"]
+- ["Ps9Equatable", ""]
+- !private ["Ps8Hashable", "LabelDescription"]
+- !private ["Ps8Hashable", "LabelImage"]
+- !private ["Ps8Hashable", "LabelRecipeText"]
+- !private ["Ps8Hashable", "RecipeDescription"]
+- !private ["Ps8Hashable", "RecipeImage"]
+- !private ["Ps8Hashable", "RecipeLabel"]
+- !private ["Ps8Hashable", "didReceiveMemoryWarning"]
+- !private ["Ps8Hashable", "image"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "text"]
+- !private ["Ps8Hashable", "viewDidLoad"]
+- ["Ps8Hashable", ""]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "Bool"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "LabelDescription"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "LabelImage"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "LabelRecipeText"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "RecipeDescription"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "RecipeImage"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "RecipeLabel"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "String"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "UIImage"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "UIImageView"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "UILabel"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "UITextView"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "deinit"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "didReceiveMemoryWarning"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "init"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "prefersStatusBarHidden"]
+- ["C16BookOfRecipesAPP22MyDetailViewController", "viewDidLoad"]
+- !private ["PSo8NSCoding", "LabelDescription"]
+- !private ["PSo8NSCoding", "LabelImage"]
+- !private ["PSo8NSCoding", "LabelRecipeText"]
+- !private ["PSo8NSCoding", "RecipeDescription"]
+- !private ["PSo8NSCoding", "RecipeImage"]
+- !private ["PSo8NSCoding", "RecipeLabel"]
+- !private ["PSo8NSCoding", "didReceiveMemoryWarning"]
+- !private ["PSo8NSCoding", "image"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "text"]
+- !private ["PSo8NSCoding", "viewDidLoad"]
+- ["PSo8NSCoding", ""]
+- !private ["PSo26NSExtensionRequestHandling", "LabelDescription"]
+- !private ["PSo26NSExtensionRequestHandling", "LabelImage"]
+- !private ["PSo26NSExtensionRequestHandling", "LabelRecipeText"]
+- !private ["PSo26NSExtensionRequestHandling", "RecipeDescription"]
+- !private ["PSo26NSExtensionRequestHandling", "RecipeImage"]
+- !private ["PSo26NSExtensionRequestHandling", "RecipeLabel"]
+- !private ["PSo26NSExtensionRequestHandling", "didReceiveMemoryWarning"]
+- !private ["PSo26NSExtensionRequestHandling", "init"]
+- !private ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
+- ["PSo26NSExtensionRequestHandling", ""]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "LabelDescription"]
+- ["CSo8NSObject", "LabelImage"]
+- ["CSo8NSObject", "LabelRecipeText"]
+- ["CSo8NSObject", "RecipeDescription"]
+- ["CSo8NSObject", "RecipeImage"]
+- ["CSo8NSObject", "RecipeLabel"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UIImage"]
+- ["CSo8NSObject", "UIImageView"]
+- ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "UITextView"]
+- ["CSo8NSObject", "didReceiveMemoryWarning"]
+- !private ["CSo8NSObject", "image"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "prefersStatusBarHidden"]
+- !private ["CSo8NSObject", "text"]
+- ["CSo8NSObject", "viewDidLoad"]
+- !private ["PSo16NSObjectProtocol", "LabelDescription"]
+- !private ["PSo16NSObjectProtocol", "LabelImage"]
+- !private ["PSo16NSObjectProtocol", "LabelRecipeText"]
+- !private ["PSo16NSObjectProtocol", "RecipeDescription"]
+- !private ["PSo16NSObjectProtocol", "RecipeImage"]
+- !private ["PSo16NSObjectProtocol", "RecipeLabel"]
+- !private ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
+- !private ["PSo16NSObjectProtocol", "image"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "text"]
+- !private ["PSo16NSObjectProtocol", "viewDidLoad"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo29UIAccessibilityIdentification", "image"]
+- !private ["PSo29UIAccessibilityIdentification", "text"]
+- !private ["PSo12UIAppearance", "image"]
+- !private ["PSo12UIAppearance", "text"]
+- !private ["PSo21UIAppearanceContainer", "LabelDescription"]
+- !private ["PSo21UIAppearanceContainer", "LabelImage"]
+- !private ["PSo21UIAppearanceContainer", "LabelRecipeText"]
+- !private ["PSo21UIAppearanceContainer", "RecipeDescription"]
+- !private ["PSo21UIAppearanceContainer", "RecipeImage"]
+- !private ["PSo21UIAppearanceContainer", "RecipeLabel"]
+- !private ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
+- !private ["PSo21UIAppearanceContainer", "image"]
+- !private ["PSo21UIAppearanceContainer", "init"]
+- !private ["PSo21UIAppearanceContainer", "text"]
+- !private ["PSo21UIAppearanceContainer", "viewDidLoad"]
+- ["PSo21UIAppearanceContainer", ""]
+- !private ["PSo18UIContentContainer", "LabelDescription"]
+- !private ["PSo18UIContentContainer", "LabelImage"]
+- !private ["PSo18UIContentContainer", "LabelRecipeText"]
+- !private ["PSo18UIContentContainer", "RecipeDescription"]
+- !private ["PSo18UIContentContainer", "RecipeImage"]
+- !private ["PSo18UIContentContainer", "RecipeLabel"]
+- !private ["PSo18UIContentContainer", "didReceiveMemoryWarning"]
+- !private ["PSo18UIContentContainer", "init"]
+- !private ["PSo18UIContentContainer", "viewDidLoad"]
+- ["PSo18UIContentContainer", ""]
+- !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
+- !private ["PSo17UICoordinateSpace", "image"]
+- !private ["PSo17UICoordinateSpace", "text"]
+- !private ["PSo13UIDynamicItem", "image"]
+- !private ["PSo13UIDynamicItem", "text"]
+- !private ["PSo18UIFocusEnvironment", "LabelDescription"]
+- !private ["PSo18UIFocusEnvironment", "LabelImage"]
+- !private ["PSo18UIFocusEnvironment", "LabelRecipeText"]
+- !private ["PSo18UIFocusEnvironment", "RecipeDescription"]
+- !private ["PSo18UIFocusEnvironment", "RecipeImage"]
+- !private ["PSo18UIFocusEnvironment", "RecipeLabel"]
+- !private ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UIFocusEnvironment", "image"]
+- !private ["PSo18UIFocusEnvironment", "init"]
+- !private ["PSo18UIFocusEnvironment", "text"]
+- !private ["PSo18UIFocusEnvironment", "viewDidLoad"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "image"]
+- !private ["PSo11UIFocusItem", "text"]
+- !private ["CSo11UIImageView", "image"]
+- !private ["PSo10UIKeyInput", "text"]
+- !private ["CSo7UILabel", "text"]
+- ["CSo11UIResponder", "Bool"]
+- ["CSo11UIResponder", "LabelDescription"]
+- ["CSo11UIResponder", "LabelImage"]
+- ["CSo11UIResponder", "LabelRecipeText"]
+- ["CSo11UIResponder", "RecipeDescription"]
+- ["CSo11UIResponder", "RecipeImage"]
+- ["CSo11UIResponder", "RecipeLabel"]
+- ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "UIImage"]
+- ["CSo11UIResponder", "UIImageView"]
+- ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "UITextView"]
+- ["CSo11UIResponder", "didReceiveMemoryWarning"]
+- !private ["CSo11UIResponder", "image"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "prefersStatusBarHidden"]
+- !private ["CSo11UIResponder", "text"]
+- ["CSo11UIResponder", "viewDidLoad"]
+- !private ["PSo30UIResponderStandardEditActions", "LabelDescription"]
+- !private ["PSo30UIResponderStandardEditActions", "LabelImage"]
+- !private ["PSo30UIResponderStandardEditActions", "LabelRecipeText"]
+- !private ["PSo30UIResponderStandardEditActions", "RecipeDescription"]
+- !private ["PSo30UIResponderStandardEditActions", "RecipeImage"]
+- !private ["PSo30UIResponderStandardEditActions", "RecipeLabel"]
+- !private ["PSo30UIResponderStandardEditActions", "didReceiveMemoryWarning"]
+- !private ["PSo30UIResponderStandardEditActions", "image"]
+- !private ["PSo30UIResponderStandardEditActions", "init"]
+- !private ["PSo30UIResponderStandardEditActions", "text"]
+- !private ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
+- ["PSo30UIResponderStandardEditActions", ""]
+- !private ["CSo12UIScrollView", "text"]
+- !private ["PSo16UIStateRestoring", "LabelDescription"]
+- !private ["PSo16UIStateRestoring", "LabelImage"]
+- !private ["PSo16UIStateRestoring", "LabelRecipeText"]
+- !private ["PSo16UIStateRestoring", "RecipeDescription"]
+- !private ["PSo16UIStateRestoring", "RecipeImage"]
+- !private ["PSo16UIStateRestoring", "RecipeLabel"]
+- !private ["PSo16UIStateRestoring", "didReceiveMemoryWarning"]
+- !private ["PSo16UIStateRestoring", "init"]
+- !private ["PSo16UIStateRestoring", "viewDidLoad"]
+- ["PSo16UIStateRestoring", ""]
+- !private ["PSo11UITextInput", "text"]
+- !private ["PSo17UITextInputTraits", "text"]
+- !private ["CSo10UITextView", "text"]
+- !private ["PSo18UITraitEnvironment", "LabelDescription"]
+- !private ["PSo18UITraitEnvironment", "LabelImage"]
+- !private ["PSo18UITraitEnvironment", "LabelRecipeText"]
+- !private ["PSo18UITraitEnvironment", "RecipeDescription"]
+- !private ["PSo18UITraitEnvironment", "RecipeImage"]
+- !private ["PSo18UITraitEnvironment", "RecipeLabel"]
+- !private ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UITraitEnvironment", "image"]
+- !private ["PSo18UITraitEnvironment", "init"]
+- !private ["PSo18UITraitEnvironment", "text"]
+- !private ["PSo18UITraitEnvironment", "viewDidLoad"]
+- ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "image"]
+- !private ["CSo6UIView", "text"]
+- ["CSo16UIViewController", "Bool"]
+- ["CSo16UIViewController", "LabelDescription"]
+- ["CSo16UIViewController", "LabelImage"]
+- ["CSo16UIViewController", "LabelRecipeText"]
+- ["CSo16UIViewController", "RecipeDescription"]
+- ["CSo16UIViewController", "RecipeImage"]
+- ["CSo16UIViewController", "RecipeLabel"]
+- ["CSo16UIViewController", "String"]
+- ["CSo16UIViewController", "UIImage"]
+- ["CSo16UIViewController", "UIImageView"]
+- ["CSo16UIViewController", "UILabel"]
+- ["CSo16UIViewController", "UITextView"]
+- ["CSo16UIViewController", "didReceiveMemoryWarning"]
+- ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "prefersStatusBarHidden"]
+- ["CSo16UIViewController", "viewDidLoad"]
+- ["CSo16UIViewController", ""]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "image"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "text"]
+- !private ["Ps9_Hashable", "LabelDescription"]
+- !private ["Ps9_Hashable", "LabelImage"]
+- !private ["Ps9_Hashable", "LabelRecipeText"]
+- !private ["Ps9_Hashable", "RecipeDescription"]
+- !private ["Ps9_Hashable", "RecipeImage"]
+- !private ["Ps9_Hashable", "RecipeLabel"]
+- !private ["Ps9_Hashable", "didReceiveMemoryWarning"]
+- !private ["Ps9_Hashable", "image"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "text"]
+- !private ["Ps9_Hashable", "viewDidLoad"]
+- ["Ps9_Hashable", ""]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "PSo15CALayerDelegate"
+- "Ps7CVarArg"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- "C16BookOfRecipesAPP22MyDetailViewController"
+- "PSo8NSCoding"
+- "PSo26NSExtensionRequestHandling"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "PSo18UIContentContainer"
+- !private "PSo30UIContentSizeCategoryAdjusting"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
+- !private "CSo11UIImageView"
+- !private "PSo10UIKeyInput"
+- !private "CSo7UILabel"
+- "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
+- !private "CSo12UIScrollView"
+- "PSo16UIStateRestoring"
+- !private "PSo11UITextInput"
+- !private "PSo17UITextInputTraits"
+- !private "CSo10UITextView"
+- "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
+- "CSo16UIViewController"
+- !private "Ps37_DefaultCustomPlaygroundQuickLookable"
+- "Ps9_Hashable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "2b410507813e5b794ca931b347a95ea7"

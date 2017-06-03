@@ -1,0 +1,9 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.51 clang-802.0.41)"
+options: "7467e1204d973f741cf436523d92faf4"
+build_time: [549604082, 692661000]
+inputs:
+  "/Users/Sergey/Documents/Projects Swift/BookOfRecipesAPP/BookOfRecipesAPP/AppDelegate.swift": [548130778, 0]
+  "/Users/Sergey/Documents/Projects Swift/BookOfRecipesAPP/BookOfRecipesAPP/MyTableViewController.swift": [548131165, 0]
+  "/Users/Sergey/Documents/Projects Swift/BookOfRecipesAPP/BookOfRecipesAPP/MyTableViewCell.swift": [547751375, 0]
+  "/Users/Sergey/Documents/Projects Swift/BookOfRecipesAPP/BookOfRecipesAPP/AboutViewController.swift": [548129732, 0]
+  "/Users/Sergey/Documents/Projects Swift/BookOfRecipesAPP/BookOfRecipesAPP/MyDetailViewController.swift": [548131340, 0]
