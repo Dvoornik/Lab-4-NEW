@@ -14,6 +14,7 @@
 		A5077EB51EC378E4009C80C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5077EB41EC378E4009C80C0 /* Assets.xcassets */; };
 		A5077EB71EC37E10009C80C0 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5077EB61EC37E10009C80C0 /* MyTableViewCell.swift */; };
 		A562DAB81EC3C2960041F4C6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562DAB71EC3C2960041F4C6 /* AboutViewController.swift */; };
+		A57A8A5F1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A57A8A5D1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodeld */; };
 		A5F508B51EE32719005D588A /* RecipeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F508B41EE32719005D588A /* RecipeObject.swift */; };
 		A5F508B71EE33BF8005D588A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F508B61EE33BF8005D588A /* AddViewController.swift */; };
 		A5F508BB1EE36C71005D588A /* MyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5077EB81EC3886E009C80C0 /* MyDetailViewController.swift */; };
@@ -30,6 +31,7 @@
 		A5077EB61EC37E10009C80C0 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		A5077EB81EC3886E009C80C0 /* MyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDetailViewController.swift; sourceTree = "<group>"; };
 		A562DAB71EC3C2960041F4C6 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = BookOfRecipesAPP/AboutViewController.swift; sourceTree = "<group>"; };
+		A57A8A5E1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookOfRecipesAPP.xcdatamodel; sourceTree = "<group>"; };
 		A5F508B41EE32719005D588A /* RecipeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeObject.swift; sourceTree = "<group>"; };
 		A5F508B61EE33BF8005D588A /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				A5077EA01EC36CE4009C80C0 /* AppDelegate.swift */,
+				A57A8A5D1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodeld */,
 				A5077EA41EC36CE4009C80C0 /* Main.storyboard */,
 				A5F508B61EE33BF8005D588A /* AddViewController.swift */,
 				A5F508B41EE32719005D588A /* RecipeObject.swift */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5077EA11EC36CE4009C80C0 /* AppDelegate.swift in Sources */,
+				A57A8A5F1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodeld in Sources */,
 				A5077EB31EC36E58009C80C0 /* MyTableViewController.swift in Sources */,
 				A5F508B71EE33BF8005D588A /* AddViewController.swift in Sources */,
 				A5077EB71EC37E10009C80C0 /* MyTableViewCell.swift in Sources */,
@@ -280,11 +284,13 @@
 		A5077EB01EC36CE4009C80C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QYEX25B3P3;
 				INFOPLIST_FILE = BookOfRecipesAPP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.deanza.schertilin.BookOfRecipesAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -292,11 +298,13 @@
 		A5077EB11EC36CE4009C80C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QYEX25B3P3;
 				INFOPLIST_FILE = BookOfRecipesAPP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.deanza.schertilin.BookOfRecipesAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -323,6 +331,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A57A8A5D1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A57A8A5E1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodel */,
+			);
+			currentVersion = A57A8A5E1EE391A000DAD40E /* BookOfRecipesAPP.xcdatamodel */;
+			path = BookOfRecipesAPP.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A5077E951EC36CE4009C80C0 /* Project object */;
 }

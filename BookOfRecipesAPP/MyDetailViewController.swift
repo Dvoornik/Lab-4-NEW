@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MyDetailViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class MyDetailViewController: UIViewController {
     var LabelImage: UIImage!
     var LabelDescription: String!
     
-    var DetailRecipe : RecipeObject!
+    var DetailRecipe : RecipeObjectMO!
     
     override var prefersStatusBarHidden: Bool {
         return false
@@ -32,7 +33,7 @@ class MyDetailViewController: UIViewController {
         
                 
         self .RecipeLabel.text = self.DetailRecipe.iRecipe
-        self .RecipeImage.image = self.DetailRecipe.iRecipeImage
+        self .RecipeImage.image = UIImage(data: self.DetailRecipe.iRecipeImage as! Data)
         self .RecipeDescription.text = self.DetailRecipe.iFullDescription
     }
 

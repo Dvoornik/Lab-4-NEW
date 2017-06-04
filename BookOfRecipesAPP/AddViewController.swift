@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class AddViewController: UIViewController {
     
@@ -14,7 +16,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var addImage: UITextField!
     @IBOutlet weak var addRecipeDescription: UITextView!
     
-    var newRecipe : ((RecipeObject) -> ())!
+    var newRecipe : RecipeObjectMO!
     
 
     override func viewDidLoad() {
@@ -33,7 +35,16 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func clickedSave(_ sender: Any) {
-        newRecipe(RecipeObject(iRecipe: self.addRecipe.text!, iRecipeImage: UIImage(named: self.addImage.text!)!, iFullDescription: self.addRecipeDescription.text!))
+        //newRecipe(RecipeObject(iRecipe: self.addRecipe.text!, iRecipeImage: UIImage(named: self.addImage.text!)!, iFullDescription: self.addRecipeDescription.text!))
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            newRecipe = RecipeObjectMO(context: appDelegate.persistentContainer.viewContext)
+            
+            newRecipe.iRecipe = addRecipe.text!
+            newRecipe.iRecipeImage = NSData(data: UIImagePNGRepresentation(UIImage(named: addImage.text!)!)!)
+            newRecipe.iFullDescription = addRecipeDescription.text!
+            
+            appDelegate.saveContext()
+        }
         
         self.dismiss(animated: true, completion: nil)
     }

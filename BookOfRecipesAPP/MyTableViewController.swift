@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class MyTableViewController: UITableViewController, UISearchResultsUpdating {
+class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSFetchedResultsControllerDelegate {
     
     /*var Recipes = ["Cappuccino", "Chai Latte", "Lemon Iced Tea", "Homestyle Lemonade", "Berry Smoothie", "Strawberry Cheesecake", "Caramel Flan", "Blueberry Pie", "Chocolate Molten Lava Cake", "Vanilla Cream Puff", "Chili Con Carne", "New England Clam Chowder", "Garden Salad", "7-Layer Nachos", "Buffalo Wings", "Oven-baked Salmon", "Grilled Steak", "Grilled Pork Chop", "Spaghetti and Meatballs", "Cheeseburger"]
     
@@ -34,16 +35,18 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         "Place the steaks on the grill and cook until golden brown and slightly charred, 4 to 5 minutes. Turn the steaks over and continue to grill 3 to 5 minutes for medium-rare.",
         "A simple marinade with soy sauce and lemon pepper seasoning add flavor to these pork chops meant to be grilled.",
         "Spaghetti with meatballs is an Italian-American dish that usually consists of spaghetti, tomato sauce and meatballs.",
-        "A cheeseburger is a hamburger topped with cheese. Traditionally, the slice of cheese is placed on top of the meat patty, but the burger can include many variations in structure, ingredients, and composition.",]*/
+        "A cheeseburger is a hamburger topped with cheese. Traditionally, the slice of cheese is placed on top of the meat patty, but the burger can include many variations in structure, ingredients, and composition.",]
     
     var MyRecipe = [
         RecipeObject (iRecipe: "Cappuccino", iRecipeImage: #imageLiteral(resourceName: "Coffe"), iFullDescription: "Italian coffee drink that is traditionally prepared with double espresso, hot milk, and steamed milk foam."),
         RecipeObject (iRecipe: "Chai Latte", iRecipeImage: #imageLiteral(resourceName: "chai"), iFullDescription: "Black tea infused with cinnamon, clove, and other warming spices is combined with steamed milk and topped with foam."),
         RecipeObject (iRecipe: "Lemon Iced Tea", iRecipeImage: #imageLiteral(resourceName: "icedtea"), iFullDescription: "Green tea is blended with mint, lemongrass and lemon verbena and lemonade, then lightly sweetened and given a good shake."),
-        RecipeObject (iRecipe: "Homestyle Lemonade", iRecipeImage: #imageLiteral(resourceName: "lemonade"), iFullDescription: "Simple and easy method for perfect lemonade every time! With simple syrup and fresh lemon juice.")]
+        RecipeObject (iRecipe: "Homestyle Lemonade", iRecipeImage: #imageLiteral(resourceName: "lemonade"), iFullDescription: "Simple and easy method for perfect lemonade every time! With simple syrup and fresh lemon juice.")]*/
     
+    var MyRecipe : [RecipeObjectMO] = []
     var searchController : UISearchController!
-    var searchResults : [RecipeObject] = []
+    var searchResults : [RecipeObjectMO] = []
+    var fetchResultsController : NSFetchedResultsController<RecipeObjectMO>!
     
    /* override var prefersStatusBarHidden: Bool {
         return true
@@ -65,10 +68,62 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         self.searchController.dimsBackgroundDuringPresentation = false
         self.tableView.tableHeaderView = self.searchController.searchBar
         
-    }
+        let fetchRequest : NSFetchRequest<RecipeObjectMO> = RecipeObjectMO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "iRecipe", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultsController.delegate = self
+            
+            do {
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects {
+                    MyRecipe = fetchedObjects
+                }
+            }
+            catch {
+                print(error)
+            }
+            
+            }
+        }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+        default:
+            tableView.reloadData()
+        }
+        
+        if let fetchedObjects = controller.fetchedObjects {
+            MyRecipe = fetchedObjects as! [RecipeObjectMO]
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,7 +154,8 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         let cellIdentifier = "RecipesCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MyTableViewCell
         
-        var cellItem : RecipeObject
+        var cellItem : RecipeObjectMO
+        
         if searchController.isActive {
             cellItem = searchResults[indexPath.row]
         }
@@ -109,7 +165,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         // Configure the cell...
         
         cell.cellLabel?.text = cellItem.iRecipe
-        cell.cellImage?.image = cellItem.iRecipeImage
+        cell.cellImage?.image = UIImage(data: cellItem.iRecipeImage as! Data)
         return cell
     }
     
@@ -133,9 +189,16 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
         if editingStyle == .delete {
             // Delete the row from the data source
            
-            MyRecipe.remove(at: indexPath.row)
+            //MyRecipe.remove(at: indexPath.row)
                     
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context  = appDelegate.persistentContainer.viewContext
+                let itemToDelete = self.fetchResultsController.object(at: indexPath)
+                context.delete(itemToDelete)
+                appDelegate.saveContext()
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -170,19 +233,19 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating {
                 detailVC.DetailRecipe = searchController.isActive ? searchResults[indexPath.row] : MyRecipe[indexPath.row]
             }
         }
-        else if  segue.identifier == "AddNewRecipe" {
+        /*else if  segue.identifier == "AddNewRecipe" {
             let addVC = segue.destination as! AddViewController
             addVC.newRecipe = addData
-        }
+        }*/
     }
     
-    func addData(newItem : RecipeObject){
+    func addData(newItem : RecipeObjectMO){
         MyRecipe.append(newItem)
     }
     
     func filterContentForSearchText(searchText: String) {
-        searchResults = MyRecipe.filter({(RecipeItem : RecipeObject) -> Bool in
-            let nameMatch = RecipeItem.iRecipe.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+        searchResults = MyRecipe.filter({(RecipeItem : RecipeObjectMO) -> Bool in
+            let nameMatch = RecipeItem.iRecipe?.range(of: searchText, options: String.CompareOptions.caseInsensitive)
             return nameMatch != nil
         })
     }
