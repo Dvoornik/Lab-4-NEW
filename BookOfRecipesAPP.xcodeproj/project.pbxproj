@@ -114,7 +114,7 @@
 				TargetAttributes = {
 					A5077E9C1EC36CE4009C80C0 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = QYEX25B3P3;
+						DevelopmentTeam = 2NKLZJVG9L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -285,7 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QYEX25B3P3;
+				DEVELOPMENT_TEAM = 2NKLZJVG9L;
 				INFOPLIST_FILE = BookOfRecipesAPP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.deanza.schertilin.BookOfRecipesAPP;
@@ -299,7 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QYEX25B3P3;
+				DEVELOPMENT_TEAM = 2NKLZJVG9L;
 				INFOPLIST_FILE = BookOfRecipesAPP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.deanza.schertilin.BookOfRecipesAPP;

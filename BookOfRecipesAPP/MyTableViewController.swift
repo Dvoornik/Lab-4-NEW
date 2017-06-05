@@ -88,6 +88,17 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
             }
             
             }
+        
+        tableView.backgroundColor = UIColor( red: 108.0/255.0, green: 122.0/255.0, blue: 137.0/255.0, alpha: 1.0)
+        tableView.tableFooterView = UIView( frame: CGRect.zero)
+        tableView.separatorColor = UIColor.clear
+        
+        searchController.searchBar.placeholder = "Search recipes..."
+        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.barTintColor = UIColor( red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+        
+        
+
         }
     
     
@@ -201,7 +212,9 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
             }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+        
+        
     }
     
 
