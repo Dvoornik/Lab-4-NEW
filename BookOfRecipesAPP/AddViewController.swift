@@ -40,7 +40,7 @@ class AddViewController: UIViewController {
             newRecipe = RecipeObjectMO(context: appDelegate.persistentContainer.viewContext)
             
             newRecipe.iRecipe = addRecipe.text!
-            newRecipe.iRecipeImage = NSData(data: UIImagePNGRepresentation(UIImage(named: addImage.text!)!)!)
+            newRecipe.iRecipeImage = NSData(data:UIImagePNGRepresentation(UIImage(named: addImage.text!)!)!)
             newRecipe.iFullDescription = addRecipeDescription.text!
             
             appDelegate.saveContext()

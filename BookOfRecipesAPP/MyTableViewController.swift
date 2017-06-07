@@ -11,9 +11,11 @@ import CoreData
 
 class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSFetchedResultsControllerDelegate {
     
-    /*var Recipes = ["Cappuccino", "Chai Latte", "Lemon Iced Tea", "Homestyle Lemonade", "Berry Smoothie", "Strawberry Cheesecake", "Caramel Flan", "Blueberry Pie", "Chocolate Molten Lava Cake", "Vanilla Cream Puff", "Chili Con Carne", "New England Clam Chowder", "Garden Salad", "7-Layer Nachos", "Buffalo Wings", "Oven-baked Salmon", "Grilled Steak", "Grilled Pork Chop", "Spaghetti and Meatballs", "Cheeseburger"]
+    var Recipes = ["Cappuccino", "Chai Latte", "Lemon Iced Tea", "Homestyle Lemonade", "Berry Smoothie", "Strawberry Cheesecake", "Caramel Flan", "Blueberry Pie", "Chocolate Molten Lava Cake", "Vanilla Cream Puff", "Chili Con Carne", "New England Clam Chowder", "Garden Salad", "7-Layer Nachos", "Buffalo Wings", "Oven-baked Salmon", "Grilled Steak", "Grilled Pork Chop", "Spaghetti and Meatballs", "Cheeseburger"]
     
-    var RecipesImages = [#imageLiteral(resourceName: "Coffe"), #imageLiteral(resourceName: "chai"), #imageLiteral(resourceName: "icedtea"), #imageLiteral(resourceName: "lemonade"), #imageLiteral(resourceName: "smoothie"), #imageLiteral(resourceName: "Cheesecake"), #imageLiteral(resourceName: "flan"), #imageLiteral(resourceName: "pie"), #imageLiteral(resourceName: "lavacake"), #imageLiteral(resourceName: "creampuff"), #imageLiteral(resourceName: "chili"), #imageLiteral(resourceName: "clamchowder"), #imageLiteral(resourceName: "salad"), #imageLiteral(resourceName: "nachos"), #imageLiteral(resourceName: "wings"), #imageLiteral(resourceName: "salmon"), #imageLiteral(resourceName: "steak"), #imageLiteral(resourceName: "porkchop"), #imageLiteral(resourceName: "spaghetti"), #imageLiteral(resourceName: "burger")]
+    var RecipesImages = ["Coffe","chai", "icedtea", "lemonade", "smoothie", "Cheesecake", "flan", "pie", "lavacake", "creampuff", "chili", "clamchowder", "salad", "nachos", "wings", "salmon", "steak", "porkchop", "spaghetti", "burger"]
+    
+    /*var RecipesImages = [#imageLiteral(resourceName: "Coffe"), #imageLiteral(resourceName: "chai"), #imageLiteral(resourceName: "icedtea"), #imageLiteral(resourceName: "lemonade"), #imageLiteral(resourceName: "smoothie"), #imageLiteral(resourceName: "Cheesecake"), #imageLiteral(resourceName: "flan"), #imageLiteral(resourceName: "pie"), #imageLiteral(resourceName: "lavacake"), #imageLiteral(resourceName: "creampuff"), #imageLiteral(resourceName: "chili"), #imageLiteral(resourceName: "clamchowder"), #imageLiteral(resourceName: "salad"), #imageLiteral(resourceName: "nachos"), #imageLiteral(resourceName: "wings"), #imageLiteral(resourceName: "salmon"), #imageLiteral(resourceName: "steak"), #imageLiteral(resourceName: "porkchop"), #imageLiteral(resourceName: "spaghetti"), #imageLiteral(resourceName: "burger")]*/
     
     var FullDescription = [
         "Italian coffee drink that is traditionally prepared with double espresso, hot milk, and steamed milk foam.",
@@ -37,11 +39,6 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         "Spaghetti with meatballs is an Italian-American dish that usually consists of spaghetti, tomato sauce and meatballs.",
         "A cheeseburger is a hamburger topped with cheese. Traditionally, the slice of cheese is placed on top of the meat patty, but the burger can include many variations in structure, ingredients, and composition.",]
     
-    var MyRecipe = [
-        RecipeObject (iRecipe: "Cappuccino", iRecipeImage: #imageLiteral(resourceName: "Coffe"), iFullDescription: "Italian coffee drink that is traditionally prepared with double espresso, hot milk, and steamed milk foam."),
-        RecipeObject (iRecipe: "Chai Latte", iRecipeImage: #imageLiteral(resourceName: "chai"), iFullDescription: "Black tea infused with cinnamon, clove, and other warming spices is combined with steamed milk and topped with foam."),
-        RecipeObject (iRecipe: "Lemon Iced Tea", iRecipeImage: #imageLiteral(resourceName: "icedtea"), iFullDescription: "Green tea is blended with mint, lemongrass and lemon verbena and lemonade, then lightly sweetened and given a good shake."),
-        RecipeObject (iRecipe: "Homestyle Lemonade", iRecipeImage: #imageLiteral(resourceName: "lemonade"), iFullDescription: "Simple and easy method for perfect lemonade every time! With simple syrup and fresh lemon juice.")]*/
     
     var MyRecipe : [RecipeObjectMO] = []
     var searchController : UISearchController!
@@ -54,6 +51,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -270,5 +268,35 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         }
     }
     
-
+    func addData() {
+        
+        var addItem : RecipeObjectMO!
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let request: NSFetchRequest<RecipeObjectMO> = RecipeObjectMO.fetchRequest()
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                MyRecipe = try context.fetch(request)
+                } catch {
+                print(error)
+            }
+        }
+        
+        if MyRecipe.count == 0 {
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                if MyRecipe.count == 0 {
+                    
+                    for i in 0...Recipes.count - 1 {
+                        addItem = RecipeObjectMO(context: appDelegate.persistentContainer.viewContext)
+                        addItem.iRecipe = Recipes[i]
+                        addItem.iRecipeImage = NSData(data:UIImagePNGRepresentation(UIImage(named: RecipesImages[i])!)!)
+                        addItem.iFullDescription = FullDescription[i]
+                        appDelegate.saveContext()
+                    }
+                }
+        
+            }
+        }
+    }
 }
