@@ -39,7 +39,7 @@ class MyDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         self .RecipeLabel.text = self.DetailRecipe.iRecipe
-        self .RecipeImage.image = UIImage(data: self.DetailRecipe.iRecipeImage as! Data)
+        self .RecipeImage.image = UIImage(data:self.DetailRecipe.iRecipeImage as! Data)
         self .RecipeDescription.text = self.DetailRecipe.iFullDescription
         
         self .RecipeLabel.center.x -= view.bounds.width
