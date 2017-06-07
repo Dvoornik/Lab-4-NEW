@@ -91,7 +91,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         
         tableView.backgroundColor = UIColor( red: 108.0/255.0, green: 122.0/255.0, blue: 137.0/255.0, alpha: 1.0)
         tableView.tableFooterView = UIView( frame: CGRect.zero)
-        tableView.separatorColor = UIColor.clear
+        tableView.separatorColor = UIColor.gray
         
         searchController.searchBar.placeholder = "Search recipes..."
         searchController.searchBar.tintColor = UIColor.white
