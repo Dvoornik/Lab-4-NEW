@@ -51,7 +51,8 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addData()
+        
+        copyData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -267,8 +268,8 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
             tableView.reloadData()
         }
     }
-    
-    func addData() {
+
+    func copyData() {
         
         var addItem : RecipeObjectMO!
         
