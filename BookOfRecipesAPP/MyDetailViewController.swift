@@ -45,9 +45,9 @@ class MyDetailViewController: UIViewController {
         self .RecipeLabel.center.x -= view.bounds.width
 
         
-        UIView.animate(withDuration: 1.0, animations: {self.RecipeImage.alpha = 1.0; self.RecipeDescription.alpha = 1.0})
+        UIView.animate(withDuration: 0.5, animations: {self.RecipeImage.alpha = 1.0; self.RecipeDescription.alpha = 1.0})
         
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
             self.RecipeLabel.center.x = self.view.center.x
         }, completion: nil)
 
